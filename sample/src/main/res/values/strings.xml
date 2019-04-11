@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">OkhttpTimeoutManager</string>
+    <string name="TestwithNoLimit">Test with No Limit(default)</string>
+    <string name="TestwithAllTimeout">Test with [AllTimeout] 3 seconds</string>
+    <string name="TestwithApartTimeout">Test with [ApartTimeout] 1 second</string>
+    <string name="Result">Result</string>
+</resources>
