@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 28
@@ -33,4 +34,13 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     compileOnly("com.squareup.okhttp3:okhttp:3.14.0")
+}
+
+publish {
+    userOrg = 'me.joffrey'
+    groupId = 'okhttptimeoutmanager'
+    artifactId = 'okhttptimeoutmanager'
+    publishVersion = '1.0'
+    desc = 'This is a fasttool to set timeout of Okhttp with one row of code'
+    website = 'https://github.com/hhecoder/OkhttpTimeoutManager'
 }
