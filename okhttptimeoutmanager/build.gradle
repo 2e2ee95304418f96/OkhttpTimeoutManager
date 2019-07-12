@@ -35,10 +35,10 @@ dependencies {
 }
 
 publish {
-    userOrg = 'me.joffrey'
-    groupId = 'okhttptimeoutmanager'
+    userOrg = 'hhecoder'
+    groupId = 'me.hhe'
     artifactId = 'okhttptimeoutmanager'
-    publishVersion = '1.0'
-    desc = 'This is a fasttool to set timeout of Okhttp with one row of code'
+    publishVersion = '1.0.0'
+    desc = 'This is a fasttool to set the timeout of Okhttp with just one line of code'
     website = 'https://github.com/hhecoder/OkhttpTimeoutManager'
 }

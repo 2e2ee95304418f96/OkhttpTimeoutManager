@@ -21,16 +21,14 @@ public class TimeoutInterceptor implements Interceptor {
 
     private final MyDns mMyDns;
 
-    private OkHttpClient.Builder mOkhttpBuilder;
     private int connectTimeout;
     private int readTimeout;
     private int writeTimeout;
     private int dnsTimeout;
 
     public TimeoutInterceptor(OkHttpClient.Builder okhttpBuilder) {
-        mOkhttpBuilder = okhttpBuilder;
         mMyDns = new MyDns();
-        mOkhttpBuilder.dns(mMyDns);
+        okhttpBuilder.dns(mMyDns);
     }
 
     @Override
