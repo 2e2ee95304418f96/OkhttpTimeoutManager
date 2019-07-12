@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void testRetrofit(int type) {
-        tvResult.setText("");
+        long startTime = System.currentTimeMillis();
+        tvResult.setText("requesting...");
         Api api = HttpUtils.getInstance().getApi();
         Call<String> call = null;
         switch (type) {
@@ -69,12 +70,23 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
-                tvResult.setText(response.body());
+                long diff = System.currentTimeMillis() - startTime;
+                String string = new StringBuilder()
+                        .append("network spend time:")
+                        .append(diff)
+                        .append("\n")
+                        .append(response.body())
+                        .toString();
+                tvResult.setText(string);
             }
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
+                long diff = System.currentTimeMillis() - startTime;
                 String text = new StringBuilder()
+                        .append("network spend time:")
+                        .append(diff)
+                        .append("\n")
                         .append("failed\n")
                         .append(t.getClass().getName())
                         .append("\n")

@@ -17,9 +17,10 @@ public interface Api {
     Call<String> getTestContent();
 
     @GET("/")
-    @Headers({TimeoutType.ALL+":3000"})
+    @Headers({TimeoutType.ALL+":30000"})
     Call<String> timeoutAll();
+
     @GET("/")
-    @Headers({TimeoutType.DNS+":1000",TimeoutType.CONNECT+":1000",TimeoutType.READ+":1000",TimeoutType.WRITE+":1000"})
+    @Headers({TimeoutType.DNS+":3000",TimeoutType.CONNECT+":3000",TimeoutType.READ+":3000",TimeoutType.WRITE+":3000"})
     Call<String> timeoutApart();
 }

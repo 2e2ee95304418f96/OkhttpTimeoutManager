@@ -2,14 +2,11 @@ package me.hhe.okhttp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import me.hhe.okhttptimeoutmanager.OkhttpTimeoutManager;
 import okhttp3.ConnectionSpec;
 import okhttp3.OkHttpClient;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Converter;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 
 /**
@@ -39,7 +36,7 @@ public class HttpUtils {
     private void initRetrofit() {
         Retrofit retrofit = new Retrofit.Builder()
                 //设置网络请求的Url地址
-                .baseUrl("https://www.douban.com/")
+                .baseUrl("https://www.google.com/")
                 .client(getOkhttpClient())
                 .addConverterFactory(new ToStringConverterFactory())
                 .build();
@@ -49,6 +46,9 @@ public class HttpUtils {
 
     private OkHttpClient getOkhttpClient() {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        builder.readTimeout(15, TimeUnit.SECONDS);
+        builder.connectTimeout(15, TimeUnit.SECONDS);
+        builder.writeTimeout(15, TimeUnit.SECONDS);
         OkhttpTimeoutManager.getInstance().with(builder);
 
         List specList = new ArrayList<>();

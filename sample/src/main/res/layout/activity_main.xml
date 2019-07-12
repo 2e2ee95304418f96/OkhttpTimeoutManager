@@ -1,59 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="10dp"
     android:layout_height="match_parent"
+    android:background="#CC000000"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tv_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@android:color/holo_orange_dark"
         android:gravity="center"
-        android:padding="20dp"
+        android:padding="15dp"
         android:text="@string/TestwithNoLimit"
         android:textColor="@android:color/white"
-        android:textSize="20sp"
-        />
+        android:textSize="16sp" />
+
     <TextView
         android:id="@+id/tv_all"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_orange_dark"
         android:gravity="center"
-        android:padding="20dp"
+        android:padding="15dp"
         android:text="@string/TestwithAllTimeout"
         android:textColor="@android:color/white"
-        android:textSize="20sp"
-        />
+        android:textSize="16sp" />
+
     <TextView
-        android:layout_marginTop="10dp"
         android:id="@+id/tv_apart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_orange_dark"
         android:gravity="center"
-        android:padding="20dp"
+        android:padding="15dp"
         android:text="@string/TestwithApartTimeout"
         android:textColor="@android:color/white"
-        android:textSize="20sp"
-        />
+        android:textSize="16sp" />
 
     <TextView
+        android:id="@+id/tv_result"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
-        android:background="@android:color/darker_gray"
-        android:id="@+id/tv_result"
-        android:padding="20dp"
+        android:background="@android:color/holo_blue_dark"
+        android:padding="15dp"
         android:text="@string/Result"
         android:textColor="@android:color/white"
-        android:textSize="14sp"/>
+        android:textSize="14sp" />
 
 
 </LinearLayout>
